@@ -7,11 +7,11 @@ export default function Hero() {
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
         titleComponent={
-          <div>
-            <div className="text-4xl font-semibold text-black dark:text-white flex flex-row w-full ml-48">
-              Your professional <TextTransition />
+          <div className="flex flex-col items-center w-full">
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white flex flex-row justify-center">
+              A <TextTransition /> you need.
             </div>
-            <h1 className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+            <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] 2xl:text-[7rem] font-bold mt-2 leading-none text-center">
               Alexander Briyan
             </h1>
           </div>
@@ -22,7 +22,7 @@ export default function Hero() {
           alt="hero"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-center-top"
+          className="mx-auto rounded-2xl object-cover h-screen object-center"
           draggable={false}
         />
       </ContainerScroll>

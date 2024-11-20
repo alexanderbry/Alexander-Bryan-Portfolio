@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const hostnames = ["picsum.photos", "i.pinimg.com"];
+const hostnames = ["picsum.photos", "i.pinimg.com", "assets.aceternity.com", "pbs.twimg.com"];
 
 const nextConfig = {
   images: {
