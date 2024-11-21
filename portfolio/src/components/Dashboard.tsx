@@ -6,13 +6,11 @@ import {
   IconCode,
   IconDevices,
   IconMail,
-  IconSchool,
   IconUser,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GlobeDemo } from "./Globe";
-import MeImage from "../assets/Me.png";
 import {
   SiJavascript,
   SiTypescript,
@@ -32,6 +30,7 @@ import {
 } from "react-icons/si";
 import { SparklesCore } from "./ui/sparkles";
 import { Ellipsis } from "lucide-react";
+import  ProfileBackground  from "./Profile";
 
 export function HomeDashboard() {
   return (
@@ -56,9 +55,10 @@ const SkeletonOne = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      <Image src={MeImage} alt="avatar" height="200" width="200" />
+      {/* <Image src={MeImage} alt="avatar" height="200" width="200" /> */}
+    <ProfileBackground />
     </motion.div>
   );
 };
@@ -182,36 +182,36 @@ const SkeletonTwo = () => {
     </div>
   );
 };
-const SkeletonThree = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}
-    >
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
-    </motion.div>
-  );
-};
+// const SkeletonThree = () => {
+//   const variants = {
+//     initial: {
+//       backgroundPosition: "0 50%",
+//     },
+//     animate: {
+//       backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
+//     },
+//   };
+//   return (
+//     <motion.div
+//       initial="initial"
+//       animate="animate"
+//       variants={variants}
+//       transition={{
+//         duration: 5,
+//         repeat: Infinity,
+//         repeatType: "reverse",
+//       }}
+//       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+//       style={{
+//         background:
+//           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+//         backgroundSize: "400% 400%",
+//       }}
+//     >
+//       <motion.div className="h-full w-full rounded-lg"></motion.div>
+//     </motion.div>
+//   );
+// };
 const SkeletonFour = () => {
   const first = {
     initial: {
@@ -252,24 +252,31 @@ const SkeletonFour = () => {
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
         
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-        
-        {/* Content */}
-        <div className="relative z-20 h-full flex flex-col items-center justify-center p-4">
-          <Image
-            src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-            alt="avatar"
-            height="100"
-            width="100"
-            className="rounded-full h-10 w-10 z-30"
-          />
-          <p className="sm:text-sm text-xs text-center font-semibold text-white mt-4 z-30">
-            Just code in Vanilla Javascript
-          </p>
-          <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4 z-30">
-            Delusional
-          </p>
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 
+          bg-gradient-to-t 
+          from-black/90 
+          to-black/60
+          opacity-0 
+          group-hover:opacity-100 
+          transition-opacity 
+          duration-300 
+          z-10 
+          flex items-end pb-6 px-4"
+        >
+          <div className="text-white">
+            <h3 className="text-2xl font-bold mb-1 
+              text-white 
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              Vanilla Javascript
+            </h3>
+            <p className="text-sm font-medium text-white/80 
+              tracking-wide 
+              leading-relaxed
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              Exploring the pure essence of web development
+            </p>
+          </div>
         </div>
       </motion.div>
 
@@ -284,24 +291,31 @@ const SkeletonFour = () => {
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
         
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-        
-        {/* Content */}
-        <div className="relative z-20 h-full flex flex-col items-center justify-center p-4">
-          <Image
-            src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-            alt="avatar"
-            height="100"
-            width="100"
-            className="rounded-full h-10 w-10 z-30"
-          />
-          <p className="sm:text-sm text-xs text-center font-semibold text-white mt-4 z-30">
-            Tailwind CSS is cool, you know
-          </p>
-          <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4 z-30">
-            Sensible
-          </p>
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 
+          bg-gradient-to-t 
+          from-black/90 
+          to-black/60
+          opacity-0 
+          group-hover:opacity-100 
+          transition-opacity 
+          duration-300 
+          z-10 
+          flex items-end pb-6 px-4"
+        >
+          <div className="text-white">
+            <h3 className="text-2xl font-bold mb-1 
+              text-white 
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              Tailwind CSS
+            </h3>
+            <p className="text-sm font-medium text-white/80 
+              tracking-wide 
+              leading-relaxed
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              Crafting beautiful interfaces with utility-first design
+            </p>
+          </div>
         </div>
       </motion.div>
 
@@ -317,24 +331,31 @@ const SkeletonFour = () => {
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
         
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-        
-        {/* Content */}
-        <div className="relative z-20 h-full flex flex-col items-center justify-center p-4">
-          <Image
-            src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-            alt="avatar"
-            height="100"
-            width="100"
-            className="rounded-full h-10 w-10 z-30"
-          />
-          <p className="sm:text-sm text-xs text-center font-semibold text-white mt-4 z-30">
-            I love angular, RSC, and Redux.
-          </p>
-          <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4 z-30">
-            Helpless
-          </p>
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 
+          bg-gradient-to-t 
+          from-black/90 
+          to-black/60
+          opacity-0 
+          group-hover:opacity-100 
+          transition-opacity 
+          duration-300 
+          z-10 
+          flex items-end pb-6 px-4"
+        >
+          <div className="text-white">
+            <h3 className="text-2xl font-bold mb-1 
+              text-white 
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              Angular & Redux
+            </h3>
+            <p className="text-sm font-medium text-white/80 
+              tracking-wide 
+              leading-relaxed
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              Mastering state management and component architecture
+            </p>
+          </div>
         </div>
       </motion.div>
     </motion.div>
