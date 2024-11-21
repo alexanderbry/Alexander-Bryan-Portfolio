@@ -9,12 +9,13 @@ import {
   IconSun,
   IconMoon,
   IconToggleLeft,
-  IconToggleRight
+  IconToggleRight,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { HomeDashboard } from "@/components/Dashboard";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   const [theme, setTheme] = useState<"dark" | "light">("light");
@@ -75,41 +76,43 @@ export default function Home() {
   ];
 
   return (
-    <div
-      className={cn(
-        "flex flex-col md:flex-row bg-white dark:bg-neutral-900 w-full flex-1 mx-auto shadow-2xl dark:shadow-neutral-800/50 overflow-hidden",
-        "lg:h-screen md:h-screen"
-      )}
-    >
-      <Sidebar open={open} setOpen={setOpen} animate={true}>
-        <SidebarBody className="justify-between gap-10 relative">
-          <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            {open ? <Logo /> : <LogoIcon />}
-            <div className="mt-8 flex flex-col space-y-2">
-              {links.map((link, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{
-                    opacity: 100,
-                    x: 0,
-                  }}
-                  transition={{ delay: idx * 0.15 }}
-                >
-                  <SidebarLink link={link} className={""} />
-                </motion.div>
-              ))}
+    <>
+      <div
+        className={cn(
+          "flex flex-col md:flex-row bg-white dark:bg-neutral-900 w-full flex-1 mx-auto shadow-2xl dark:shadow-neutral-800/50 overflow-hidden",
+          "lg:h-screen md:h-screen"
+        )}
+      >
+        <Sidebar open={open} setOpen={setOpen} animate={true}>
+          <SidebarBody className="justify-between gap-10 relative">
+            <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+              {open ? <Logo /> : <LogoIcon />}
+              <div className="mt-8 flex flex-col space-y-2">
+                {links.map((link, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{
+                      opacity: 100,
+                      x: 0,
+                    }}
+                    transition={{ delay: idx * 0.15 }}
+                  >
+                    <SidebarLink link={link} className={""} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-          <ThemeToggleSection 
-            theme={theme} 
-            toggleTheme={toggleTheme} 
-            open={open} 
-          />
-        </SidebarBody>
-      </Sidebar>
-      <Dashboard theme={theme} />
-    </div>
+            <ThemeToggleSection
+              theme={theme}
+              toggleTheme={toggleTheme}
+              open={open}
+            />
+          </SidebarBody>
+        </Sidebar>
+        <Dashboard theme={theme} />
+      </div>
+    </>
   );
 }
 
@@ -138,14 +141,14 @@ const LogoIcon = () => (
   </Link>
 );
 
-const ThemeToggleSection = ({ 
-  theme, 
-  toggleTheme, 
-  open 
-}: { 
-  theme: "dark" | "light", 
-  toggleTheme: () => void,
-  open: boolean 
+const ThemeToggleSection = ({
+  theme,
+  toggleTheme,
+  open,
+}: {
+  theme: "dark" | "light";
+  toggleTheme: () => void;
+  open: boolean;
 }) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -173,7 +176,7 @@ const ThemeToggleSection = ({
           ) : (
             <IconMoon className="h-5 w-5 text-neutral-600 dark:text-neutral-300" />
           )}
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-sm text-neutral-600 dark:text-neutral-300 flex-shrink-0"
