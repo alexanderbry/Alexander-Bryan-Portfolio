@@ -11,6 +11,7 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GlobeDemo } from "./Globe";
+import MeImage from "../assets/Me.png";
 import {
   SiJavascript,
   SiTypescript,
@@ -57,8 +58,8 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      {/* <Image src={MeImage} alt="avatar" height="200" width="200" /> */}
-    <ProfileBackground />
+      <Image src={MeImage} alt="avatar" height="200" width="200" />
+    {/* <ProfileBackground /> */}
     </motion.div>
   );
 };
