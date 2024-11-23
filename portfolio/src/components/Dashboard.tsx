@@ -58,7 +58,7 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      <Image src={MeImage} alt="avatar" height="200" width="200" />
+      {/* <Image src={MeImage} alt="avatar" height="200" width="200" /> */}
     {/* <ProfileBackground /> */}
     </motion.div>
   );
@@ -380,7 +380,7 @@ const items = [
     header: <SkeletonOne />,
     className: "md:col-span-1",
     icon: <IconUser  className="h-8 w-8 text-neutral-500" />,
-    background: "/images/projects-bg.jpg", // Add your background image path
+    background: <ProfileBackground />,
   },
   {
     title: "Tech Stacks",
@@ -396,7 +396,7 @@ const items = [
       particleDensity={150}
       className="w-full h-full"
       particleColor="#6366f1"
-    />, // Add your background component
+    />,
   },
   {
     title: "Projects",

@@ -8,10 +8,9 @@ const ProfileBackground = () => {
   <Image
     src={MeImage}
     alt="Profile Photo"
-    width={300}
-    height={400}
-    priority
-    className="w-full h-[380px] object-cover object-top transition-all duration-300 hover:scale-105"
+    width={500}
+    height={500}
+    className="w-[100%] h-[330px] object-cover object-top transition-all duration-300 hover:scale-105 -translate-x-28 opacity-50 "
   />
 </div>
   );

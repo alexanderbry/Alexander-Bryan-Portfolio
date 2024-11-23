@@ -40,7 +40,7 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  background?: string | React.ReactNode; // Accept both string and React node
+  background?: string | React.ReactNode; 
 }) => {
   return (
     <motion.div
@@ -72,7 +72,7 @@ export const BentoGridItem = ({
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: -1, // Send background behind content
+            zIndex: -1,
           }}
         />
       ) : (
@@ -114,7 +114,7 @@ export const BentoGridItem = ({
               </div>
             </motion.div>
           )}
-          <div className="space-y-1">
+          <div className="space-y-1 z-20">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ 
