@@ -8,7 +8,7 @@ export default function Hero() {
       <ContainerScroll
         titleComponent={
           <div className="flex flex-col items-center w-full">
-            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white flex flex-row justify-center">
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white flex flex-row justify-center gap-3">
               A <TextTransition /> you need.
             </div>
             <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] 2xl:text-[7rem] font-bold mt-2 leading-none text-center">

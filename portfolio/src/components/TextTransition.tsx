@@ -28,7 +28,7 @@ const TextTransition: React.FC = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -20, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-semibold text-blue-600 text-start mx-3"
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-semibold text-blue-600 text-start"
       >
         {currentRole}
       </motion.div>

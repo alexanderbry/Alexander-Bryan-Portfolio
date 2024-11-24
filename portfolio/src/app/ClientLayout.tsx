@@ -49,14 +49,14 @@ export default function ClientLayout({
   const links = [
     {
       label: "Dashboard",
-      href: "#",
+      href: "/",
       icon: (
         <IconBrandTabler className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Profile",
-      href: "#",
+      href: "/profile",
       icon: (
         <IconUserBolt className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
       ),
@@ -114,7 +114,7 @@ export default function ClientLayout({
       <div
         className={cn("flex flex-1 p-4 md:p-8", theme === "dark" ? "dark" : "")}
       >
-        <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-6 w-full space-y-6">
+        <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-6 w-full space-y-6 overflow-auto">
           {children}
         </div>
       </div>
@@ -124,7 +124,7 @@ export default function ClientLayout({
 
 const Logo = () => (
   <Link
-    href="#"
+    href="/"
     className="group flex space-x-3 items-center text-sm py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors"
   >
     <div className="h-6 w-7 bg-gradient-to-br from-black to-neutral-700 dark:from-white dark:to-neutral-200 rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm" />
@@ -140,7 +140,7 @@ const Logo = () => (
 
 const LogoIcon = () => (
   <Link
-    href="#"
+    href="/"
     className="group flex justify-center items-center text-sm py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors"
   >
     <div className="h-6 w-7 bg-gradient-to-br from-black to-neutral-700 dark:from-white dark:to-neutral-200 rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm" />

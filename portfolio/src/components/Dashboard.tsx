@@ -2,16 +2,9 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  IconCode,
-  IconDevices,
-  IconMail,
-  IconUser,
-} from "@tabler/icons-react";
+import { IconCode, IconDevices, IconMail, IconUser } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { GlobeDemo } from "./Globe";
-import MeImage from "../assets/Me.png";
 import {
   SiJavascript,
   SiTypescript,
@@ -31,7 +24,8 @@ import {
 } from "react-icons/si";
 import { SparklesCore } from "./ui/sparkles";
 import { Ellipsis } from "lucide-react";
-import  ProfileBackground  from "./Profile";
+import ProfileBackground from "./Profile";
+import { GlobeSpin } from "./GlobeSpin";
 
 export function HomeDashboard() {
   return (
@@ -45,6 +39,7 @@ export function HomeDashboard() {
           className={cn("[&>p:text-lg]", item.className)}
           icon={item.icon}
           background={item.background}
+          linkTo={item.linkTo}
         />
       ))}
     </BentoGrid>
@@ -58,8 +53,6 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      {/* <Image src={MeImage} alt="avatar" height="200" width="200" /> */}
-    {/* <ProfileBackground /> */}
     </motion.div>
   );
 };
@@ -129,15 +122,13 @@ const features = [
     icon: <SiFirebase className="text-orange-500" />,
   },
   {
-    title: "and many more",
-    icon: <Ellipsis className="text-black dark:text-white" />, 
+    title: "more",
+    icon: <Ellipsis className="text-black dark:text-white" />,
   },
 ];
 const SkeletonTwo = () => {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      
-
       <div className="absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
         {features.map((feature, index) => (
           <motion.div
@@ -249,12 +240,14 @@ const SkeletonFour = () => {
         <Image
           src="https://i.pinimg.com/736x/31/26/e8/3126e89cf1d447263897b0745648ca28.jpg"
           alt="background"
-          fill
+          width={1920}
+          height={1080}
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
-        
+
         {/* Hover Overlay */}
-        <div className="absolute inset-0 
+        <div
+          className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
           to-black/60
@@ -266,34 +259,38 @@ const SkeletonFour = () => {
           flex items-end pb-6 px-4"
         >
           <div className="text-white">
-            <h3 className="text-2xl font-bold mb-1 
+            <h3
+              className="text-2xl font-bold mb-1 
               text-white 
-              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+            >
               Vanilla Javascript
             </h3>
-            <p className="text-sm font-medium text-white/80 
+            <p
+              className="text-sm font-medium text-white/80 
               tracking-wide 
               leading-relaxed
-              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            >
               Exploring the pure essence of web development
             </p>
           </div>
         </div>
       </motion.div>
 
-      <motion.div
-        className="h-full w-1/3 rounded-2xl relative overflow-hidden group"
-      >
+      <motion.div className="h-full w-1/3 rounded-2xl relative overflow-hidden group">
         {/* Background Image */}
         <Image
           src="https://i.pinimg.com/736x/66/bb/b1/66bbb1fef4a2bdf34a21682eac937134.jpg"
           alt="background"
-          fill
+          width={1920}
+          height={1080}
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
-        
+
         {/* Hover Overlay */}
-        <div className="absolute inset-0 
+        <div
+          className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
           to-black/60
@@ -305,15 +302,19 @@ const SkeletonFour = () => {
           flex items-end pb-6 px-4"
         >
           <div className="text-white">
-            <h3 className="text-2xl font-bold mb-1 
+            <h3
+              className="text-2xl font-bold mb-1 
               text-white 
-              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+            >
               Tailwind CSS
             </h3>
-            <p className="text-sm font-medium text-white/80 
+            <p
+              className="text-sm font-medium text-white/80 
               tracking-wide 
               leading-relaxed
-              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            >
               Crafting beautiful interfaces with utility-first design
             </p>
           </div>
@@ -327,13 +328,15 @@ const SkeletonFour = () => {
         {/* Background Image */}
         <Image
           src="https://i.pinimg.com/736x/09/36/c9/0936c9bbcb4d7bd89315cd0fed9c921d.jpg"
+          width={1920}
+          height={1080}
           alt="background"
-          fill
           className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
-        
+
         {/* Hover Overlay */}
-        <div className="absolute inset-0 
+        <div
+          className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
           to-black/60
@@ -345,15 +348,19 @@ const SkeletonFour = () => {
           flex items-end pb-6 px-4"
         >
           <div className="text-white">
-            <h3 className="text-2xl font-bold mb-1 
+            <h3
+              className="text-2xl font-bold mb-1 
               text-white 
-              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+            >
               Angular & Redux
             </h3>
-            <p className="text-sm font-medium text-white/80 
+            <p
+              className="text-sm font-medium text-white/80 
               tracking-wide 
               leading-relaxed
-              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            >
               Mastering state management and component architecture
             </p>
           </div>
@@ -369,7 +376,8 @@ const SkeletonFive = () => {
       whileHover="animate"
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      <GlobeDemo />
+      {/* <GlobeDemo /> */}
+      <GlobeSpin />
     </motion.div>
   );
 };
@@ -379,8 +387,9 @@ const items = [
     description: "Professional overview and personal details",
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    icon: <IconUser  className="h-8 w-8 text-neutral-500" />,
+    icon: <IconUser className="h-8 w-8 text-neutral-500" />,
     background: <ProfileBackground />,
+    linkTo: "/profile",
   },
   {
     title: "Tech Stacks",
@@ -388,15 +397,18 @@ const items = [
     header: <SkeletonTwo />,
     className: "md:col-span-2",
     icon: <IconDevices className="h-8 w-8 text-neutral-500" />,
-    background: <SparklesCore
-      id="tech-stack-sparkles"
-      background="transparent"
-      minSize={0.6}
-      maxSize={1.4}
-      particleDensity={150}
-      className="w-full h-full"
-      particleColor="#6366f1"
-    />,
+    background: (
+      <SparklesCore
+        id="tech-stack-sparkles"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={150}
+        className="w-full h-full"
+        particleColor="#6366f1"
+      />
+    ),
+    linkTo: "/techstacks",
   },
   {
     title: "Projects",
@@ -404,7 +416,8 @@ const items = [
     description: "Showcase of recent development work",
     header: <SkeletonFour />,
     icon: <IconCode className="h-8 w-8 text-neutral-500" />,
-    background: "/images/projects-bg.jpg", // Add your background image path
+    background: "",
+    linkTo: "/profile",
   },
   {
     title: "Contact Me",
@@ -412,7 +425,7 @@ const items = [
     header: <SkeletonFive />,
     className: "md:col-span-1",
     icon: <IconMail className="h-8 w-8 text-neutral-500" />,
-    background: "/images/contact-bg.jpg", // Add your background image path
+    background: "",
+    linkTo: "/profile",
   },
 ];
-

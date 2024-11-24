@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
+import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
   title: "Alexander Briyan's Portfolio",
