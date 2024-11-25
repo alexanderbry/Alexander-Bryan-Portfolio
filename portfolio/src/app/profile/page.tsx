@@ -1,6 +1,7 @@
 "use client";
-import { CertificationsSection } from "@/components/ui/CertificationsSection";
-import { CoreCompetenciesSection } from "@/components/ui/CoreCompetenciesSection";
+import { CertificationsSection } from "@/components/CertificationsSection";
+import { CoreCompetenciesSection } from "@/components/CoreCompetenciesSection";
+import { WorkExperienceSection } from "@/components/WorkExperienceSection";
 import React, { useEffect, useState } from "react";
 import {
   FaGithub,
@@ -10,46 +11,67 @@ import {
   FaPhone,
 } from "react-icons/fa";
 
-const WebDeveloperProfile = () => {
-  const [theme, setTheme] = useState("dark");
+const Profile = () => {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "dark";
-    setTheme(storedTheme);
+    // Check localStorage for theme preference
+    const storedTheme = localStorage.getItem("theme") as 'dark' | 'light';
+    
+    // Validate and set theme
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      setTheme(storedTheme);
+      
+      // Apply theme to html element for Tailwind dark mode
+      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
+    } else {
+      // Default to dark theme if no valid theme is stored
+      setTheme('dark');
+      localStorage.setItem("theme", 'dark');
+      document.documentElement.classList.add('dark');
+    }
   }, []);
 
   const themeColors = {
     dark: {
-      background: "bg-transparent",
-      text: "text-white",
-      secondaryText: "text-slate-300",
-      border: "border-slate-700",
-      skillBg: "bg-[#334155]",
-      skillHover: "hover:bg-[#475569]",
+      background: "bg-[#121212]", 
+      border: "border-slate-700", 
+      skillBg: "bg-[#1E293B]", 
+      skillHover: "hover:bg-[#334155]",
       scrollbar: "scrollbar-dark",
+      profileBorder: "border-slate-600",
+      socialIcons: {
+        email: "text-gray-400 hover:text-white",
+        github: "text-gray-400 hover:text-white",
+        linkedin: "text-blue-500 hover:text-blue-400"
+      }
     },
     light: {
-      background: "bg-transparent",
-      text: "text-black",
-      secondaryText: "text-gray-700",
-      border: "border-gray-300",
-      skillBg: "bg-gray-200",
+      background: "bg-gray-50", 
+      border: "border-gray-300", 
+      skillBg: "bg-gray-200", 
       skillHover: "hover:bg-gray-300",
       scrollbar: "scrollbar-light",
+      profileBorder: "border-gray-300",
+      socialIcons: {
+        email: "text-gray-700 dark:text-gray-300",
+        github: "text-gray-700 dark:text-gray-300",
+        linkedin: "text-blue-600 dark:text-blue-400"
+      }
     },
   };
 
   const currentTheme = themeColors[theme];
 
   return (
-    <div className={`w-full h-full ${currentTheme.background}`}>
+    <div className={`w-full h-full`}>
       <div className="grid md:grid-cols-[1fr_2fr] gap-6 h-full">
         {/* Sidebar */}
         <div className="flex items-center justify-center h-full">
           <div className="flex flex-col items-center space-y-4">
             {/* Profile Image */}
             <div className="relative">
-              <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-slate-600">
+              <div className={`w-40 h-40 rounded-full overflow-hidden border-4 ${currentTheme.profileBorder}`}>
                 <img
                   src="https://via.placeholder.com/300"
                   alt="Profile"
@@ -60,10 +82,10 @@ const WebDeveloperProfile = () => {
 
             {/* Name and Title */}
             <div className="text-center">
-              <h1 className={`text-2xl font-bold ${currentTheme.text}`}>
+              <h1 className={`text-2xl font-bold text-neutral-900 dark:text-neutral-100`}>
                 Alexander Briyan
               </h1>
-              <p className={`text-sm ${currentTheme.secondaryText}`}>
+              <p className={`text-sm text-neutral-800 dark:text-neutral-200`}>
                 Fullstack Software Developer
               </p>
             </div>
@@ -71,13 +93,13 @@ const WebDeveloperProfile = () => {
             {/* Contact Information */}
             <div className="space-y-2 text-center">
               <div
-                className={`flex items-center justify-center space-x-2 ${currentTheme.secondaryText}`}
+                className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaMapMarkerAlt />
                 <span>Depok, Indonesia</span>
               </div>
               <div
-                className={`flex items-center justify-center space-x-2 ${currentTheme.secondaryText}`}
+                className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaPhone />
                 <span>+6285156386466</span>
@@ -88,19 +110,19 @@ const WebDeveloperProfile = () => {
             <div className="flex space-x-4">
               <a
                 href="mailto:alexunderbrain@gmail.com"
-                className={`hover:scale-110 transition-transform ${currentTheme.secondaryText} hover:text-blue-500`}
+                className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.email}`}
               >
                 <FaEnvelope size={24} />
               </a>
               <a
                 href="https://github.com/yourusername"
-                className={`hover:scale-110 transition-transform ${currentTheme.secondaryText} hover:text-blue-500`}
+                className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.github}`}
               >
                 <FaGithub size={24} />
               </a>
               <a
                 href="https://linkedin.com/in/yourusername"
-                className={`hover:scale-110 transition-transform ${currentTheme.secondaryText} hover:text-blue-500`}
+                className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.linkedin}`}
               >
                 <FaLinkedin size={24} />
               </a>
@@ -113,20 +135,21 @@ const WebDeveloperProfile = () => {
           className={`
             h-full 
             overflow-y-auto 
-            pr-4 
+            pr-4
+            py-16 
             ${currentTheme.scrollbar}
           `}
         >
-          <div className="space-y-6">
+          <div className="space-y-16">
             {/* Professional Summary */}
             <section>
               <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 ${currentTheme.text}`}
+                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
               >
                 Professional Profile
               </h2>
               <p
-                className={`leading-relaxed text-justify ${currentTheme.secondaryText}`}
+                className={`leading-relaxed text-justify text-neutral-800 dark:text-neutral-200`}
               >
                 A dedicated Full Stack JavaScript developer with a proven track
                 record of building innovative web and mobile applications.
@@ -139,7 +162,7 @@ const WebDeveloperProfile = () => {
             {/* Core Competencies */}
             <section>
               <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 ${currentTheme.text}`}
+                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
               >
                 Key Competencies
               </h2>
@@ -148,12 +171,12 @@ const WebDeveloperProfile = () => {
             {/* Professional Highlights */}
             <section>
               <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 ${currentTheme.text}`}
+                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
               >
                 Professional Highlights
               </h2>
               <ul
-                className={`list-disc list-inside space-y-2 ${currentTheme.secondaryText}`}
+                className={`list-disc list-inside space-y-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <li>
                   Graduated from Hacktiv8 Full Stack JavaScript Immersive
@@ -171,14 +194,24 @@ const WebDeveloperProfile = () => {
               </ul>
             </section>
 
+            {/* Work Experience */}
+            <section>
+              <h2
+                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
+              >
+                Work Experience and Education
+              </h2>
+              <WorkExperienceSection />
+            </section>
+
             {/* Quick Certifications */}
             <section>
               <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 ${currentTheme.text}`}
+                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
               >
                 Certifications
               </h2>
-<CertificationsSection/>
+              <CertificationsSection />
             </section>
           </div>
         </div>
@@ -187,4 +220,4 @@ const WebDeveloperProfile = () => {
   );
 };
 
-export default WebDeveloperProfile;
+export default Profile;

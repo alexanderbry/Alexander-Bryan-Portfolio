@@ -1,49 +1,50 @@
 import { motion } from "framer-motion";
 import {
-  IconCertificate,
-  IconBrandHackerrank,
-  IconCode,
-  IconDatabase,
-  IconBrandReact,
-  IconExternalLink,
-} from "@tabler/icons-react";
-import { LinkPreview } from "./link-preview";
-import certificatePreview from "../../assets/JSCertificate.png";
+  SiJavascript,
+  SiReact,
+  SiPostgresql,
+  SiCss3,
+  SiHackerrank,
+} from "react-icons/si";
+import { FiExternalLink } from "react-icons/fi";
+import { FaCertificate } from "react-icons/fa";
+import { LinkPreview } from "./ui/link-preview";
+import certificatePreview from "../assets/JSCertificate.png";
 
 export function CertificationsSection() {
   const certifications = [
     {
       title: "JavaScript",
       provider: "HackerRank",
-      icon: <IconCode className="w-6 h-6 text-green-500" />,
+      icon: <SiJavascript className="w-6 h-6 text-yellow-400" />,
       link: "https://www.hackerrank.com/certificates/iframe/ac08862eab83",
       previewImage: certificatePreview,
     },
     {
       title: "React",
       provider: "HackerRank",
-      icon: <IconBrandReact className="w-6 h-6 text-blue-500" />,
+      icon: <SiReact className="w-6 h-6 text-blue-500" />,
       link: "https://www.hackerrank.com/certificates/iframe/c79e21a9c172",
       previewImage: certificatePreview,
     },
     {
       title: "Problem Solving",
       provider: "HackerRank",
-      icon: <IconCertificate className="w-6 h-6 text-purple-500" />,
+      icon: <FaCertificate className="w-6 h-6 text-purple-500" />,
       link: "https://www.hackerrank.com/certificates/iframe/5ff1bbcb4e25",
       previewImage: certificatePreview,
     },
     {
       title: "SQL",
       provider: "HackerRank",
-      icon: <IconDatabase className="w-6 h-6 text-orange-500" />,
+      icon: <SiPostgresql className="w-6 h-6 text-blue-600" />,
       link: "https://www.hackerrank.com/certificates/iframe/de5ce7d33e3f",
       previewImage: certificatePreview,
     },
     {
       title: "CSS",
       provider: "HackerRank",
-      icon: <IconCode className="w-6 h-6 text-indigo-500" />,
+      icon: <SiCss3 className="w-6 h-6 text-blue-500" />,
       link: "https://www.hackerrank.com/certificates/iframe/d2610f5fd874",
       previewImage: certificatePreview,
     },
@@ -74,7 +75,7 @@ export function CertificationsSection() {
           `}
         >
           <div className="flex items-center space-x-4">
-            <div className="p-2 bg-white dark:bg-neutral-800 rounded-full shadow-sm">
+            <div className="p-2">
               {cert.icon}
             </div>
             <div>
@@ -85,7 +86,8 @@ export function CertificationsSection() {
                 {cert.title}
               </h3>
               <div className="text-sm text-neutral-600 dark:text-neutral-400 flex items-center gap-1">
-                {cert.provider} <IconBrandHackerrank className="w-3 h-3 text-green-600" />
+                {cert.provider}{" "}
+                <SiHackerrank className="w-3 h-3 text-green-600" />
               </div>
             </div>
           </div>
@@ -111,10 +113,10 @@ export function CertificationsSection() {
               </span>
             </LinkPreview>
             <a href={cert.link} target="_blank" rel="noopener noreferrer">
-              <IconExternalLink
+              <FiExternalLink
                 className="w-5 h-5 text-neutral-500 
-                group-hover:text-blue-600 
-                transition-colors"
+  group-hover:text-blue-600 
+  transition-colors"
               />
             </a>
           </div>
