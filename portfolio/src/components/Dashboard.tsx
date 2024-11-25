@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { IconCode, IconDevices, IconMail, IconUser } from "@tabler/icons-react";
+import { IconAddressBook, IconCode, IconDevices, IconFiles, IconMail, IconUser, IconUserBolt } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -392,11 +392,11 @@ const items = [
     linkTo: "/profile",
   },
   {
-    title: "Tech Stacks",
+    title: "Skills",
     description: "Technologies and tools I work with",
     header: <SkeletonTwo />,
     className: "md:col-span-2",
-    icon: <IconDevices className="h-8 w-8 text-neutral-500" />,
+    icon: <IconCode className="h-8 w-8 text-neutral-500" />,
     background: (
       <SparklesCore
         id="tech-stack-sparkles"
@@ -408,14 +408,14 @@ const items = [
         particleColor="#6366f1"
       />
     ),
-    linkTo: "/techstacks",
+    linkTo: "/skills",
   },
   {
     title: "Projects",
     className: "md:col-span-2",
     description: "Showcase of recent development work",
     header: <SkeletonFour />,
-    icon: <IconCode className="h-8 w-8 text-neutral-500" />,
+    icon: <IconFiles className="h-8 w-8 text-neutral-500" />,
     background: "",
     linkTo: "/profile",
   },

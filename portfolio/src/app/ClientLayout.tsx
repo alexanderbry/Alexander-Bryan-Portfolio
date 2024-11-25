@@ -3,14 +3,15 @@
 import React, { useState, useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import {
-  IconArrowLeft,
   IconBrandTabler,
-  IconSettings,
-  IconUserBolt,
   IconSun,
   IconMoon,
+  IconFiles,
+  IconCode,
   IconToggleLeft,
   IconToggleRight,
+  IconUser,
+  IconMail,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -51,28 +52,35 @@ export default function ClientLayout({
       label: "Dashboard",
       href: "/",
       icon: (
-        <IconBrandTabler className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
+        <IconBrandTabler className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Profile",
       href: "/profile",
       icon: (
-        <IconUserBolt className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
+        <IconUser className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "Skills",
+      href: "/skills",
       icon: (
-        <IconSettings className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
+        <IconCode className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
-      label: "Logout",
+      label: "Projects",
       href: "#",
       icon: (
-        <IconArrowLeft className="text-neutral-600 dark:text-neutral-300 h-5 w-5 flex-shrink-0" />
+        <IconFiles className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Contact Me",
+      href: "/contactme",
+      icon: (
+        <IconMail className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
       ),
     },
   ];
@@ -133,7 +141,7 @@ const Logo = () => (
       animate={{ opacity: 1 }}
       className="font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-black dark:group-hover:text-white transition-colors"
     >
-      Acet Labs
+      Alexander Briyan
     </motion.span>
   </Link>
 );

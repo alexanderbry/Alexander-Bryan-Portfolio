@@ -8,7 +8,10 @@ import {
   FaPaperPlane,
   FaUser,
   FaCommentDots,
+  FaCheck,
 } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
 
 const ContactMePage = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +21,7 @@ const ContactMePage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,116 +35,116 @@ const ContactMePage = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Reset form and show success
       setFormData({ name: "", email: "", message: "" });
-      alert("Message sent successfully!");
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsSubmitting(false);
+      }, 3000);
     } catch (error) {
       alert("Failed to send message. Please try again.");
-    } finally {
       setIsSubmitting(false);
     }
   };
 
-  const contactInfoVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
-      y: 0,
+      scale: 1,
       transition: {
+        delayChildren: 0.3,
         staggerChildren: 0.2,
       },
     },
   };
 
-  const contactInfoItemVariants = {
+  const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
   };
 
   return (
     <motion.div
-      className="container mx-auto max-w-5xl bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl overflow-hidden"
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      className="w-full h-full bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl overflow-hidden"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <div className="grid md:grid-cols-2 gap-8 p-8">
+      <div className="grid md:grid-cols-2 h-full w-full">
         {/* Contact Information Section */}
         <motion.div
-          className="space-y-6 bg-blue-50 dark:bg-neutral-900 p-6 rounded-xl"
-          variants={contactInfoVariants}
-          initial="hidden"
-          animate="visible"
+          className="bg-[url('https://i.pinimg.com/736x/5b/e6/c5/5be6c573577a0c8a0d84e6bc56195128.jpg')] text-white p-8 flex flex-col justify-end"
+          variants={itemVariants}
         >
-          <motion.h2
-            className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6"
-            variants={contactInfoItemVariants}
-          >
-            Get In Touch
-          </motion.h2>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4">
+              <motion.div
+                className="flex items-center space-x-4 sm:col-span-1"
+                variants={itemVariants}
+              >
+                <FaMapMarkerAlt className="text-xl min-w-[32px]" />
+                <div>
+                  <p className="text-[12px] font-semibold">Location</p>
+                  <p className="text-[10px]">
+                    West Java, Indonesia
+                  </p>
+                </div>
+              </motion.div>
 
-          <motion.div
-            className="flex items-center space-x-4"
-            variants={contactInfoItemVariants}
-          >
-            <FaMapMarkerAlt className="text-blue-500 text-2xl" />
-            <div>
-              <p className="font-semibold text-neutral-700 dark:text-neutral-300">
-                Location
-              </p>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                Depok, Indonesia
-              </p>
-            </div>
-          </motion.div>
+              <motion.div
+                variants={itemVariants}
+              >
+                <Link href="https://wa.me/6285156386466" className="flex items-center space-x-4 sm:col-span-1 hover:text-blue-400">
+                <FaPhone className="text-xl min-w-[32px]" />
+                <div>
+                  <p className="text-[12px] font-semibold">Phone</p>
+                  <p className="text-[10px]">+62 851-5638-6466</p>
+                </div>
+                </Link>
+              </motion.div>
 
-          <motion.div
-            className="flex items-center space-x-4"
-            variants={contactInfoItemVariants}
-          >
-            <FaPhone className="text-blue-500 text-2xl" />
-            <div>
-              <p className="font-semibold text-neutral-700 dark:text-neutral-300">
-                Phone
-              </p>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                +6285156386466
-              </p>
+              <motion.div
+                className="flex items-center space-x-4 sm:col-span-1"
+                variants={itemVariants}
+              >
+                <Link href="mailto:alexunderbrain@gmail.com" className="flex items-center space-x-4 sm:col-span-1 hover:text-blue-400">
+                <FaEnvelope className="text-xl min-w-[32px]" />
+                <div>
+                  <p className="text-[12px] font-semibold">Email</p>
+                  <p className="text-[10px] break-words">
+                    alexunderbrain@gmail.com
+                  </p>
+                </div>
+                </Link>
+              </motion.div>
             </div>
-          </motion.div>
-
-          <motion.div
-            className="flex items-center space-x-4"
-            variants={contactInfoItemVariants}
-          >
-            <FaEnvelope className="text-blue-500 text-2xl" />
-            <div>
-              <p className="font-semibold text-neutral-700 dark:text-neutral-300">
-                Email
-              </p>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                alexunderbrain@gmail.com
-              </p>
-            </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Contact Form Section */}
         <motion.form
           onSubmit={handleSubmit}
-          className="space-y-6"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          className="p-8 space-y-6 my-auto"
+          variants={itemVariants}
         >
           <h2 className="text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
             Send a Message
           </h2>
 
-          <div className="relative">
+          {/* Name Input */}
+          <motion.div className="relative" variants={itemVariants}>
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <FaUser className="text-blue-500" />
             </div>
@@ -153,9 +157,10 @@ const ContactMePage = () => {
               required
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          {/* Email Input */}
+          <motion.div className="relative" variants={itemVariants}>
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <FaEnvelope className="text-blue-500" />
             </div>
@@ -168,9 +173,10 @@ const ContactMePage = () => {
               required
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          {/* Message Textarea */}
+          <motion.div className="relative" variants={itemVariants}>
             <div className="absolute inset-y-0 left-0 pl-3 pt-3 pointer-events-none">
               <FaCommentDots className="text-blue-500" />
             </div>
@@ -183,11 +189,12 @@ const ContactMePage = () => {
               rows={4}
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
-          </div>
+          </motion.div>
 
-          <button
+          {/* Submit Button */}
+          <motion.button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || isSubmitted}
             className={`
                 w-full 
                 py-3 
@@ -198,16 +205,24 @@ const ContactMePage = () => {
                 items-center 
                 justify-center 
                 space-x-2
+                transition 
+                duration-300
                 ${
-                  isSubmitting
+                  isSubmitted
+                    ? "bg-green-500"
+                    : isSubmitting
                     ? "bg-blue-400 cursor-not-allowed"
                     : "bg-blue-600 hover:bg-blue-700"
                 }
-                transition 
-                duration-300
               `}
+            variants={itemVariants}
           >
-            {isSubmitting ? (
+            {isSubmitted ? (
+              <>
+                <FaCheck className="mr-2" />
+                <span>Message Sent!</span>
+              </>
+            ) : isSubmitting ? (
               <>
                 <span>Sending...</span>
                 <div className="animate-spin">🔄</div>
@@ -218,7 +233,7 @@ const ContactMePage = () => {
                 <FaPaperPlane />
               </>
             )}
-          </button>
+          </motion.button>
         </motion.form>
       </div>
     </motion.div>

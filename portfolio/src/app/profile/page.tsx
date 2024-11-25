@@ -100,13 +100,13 @@ const Profile = () => {
                 className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaMapMarkerAlt />
-                <span>Depok, Indonesia</span>
+                <span>West Java, Indonesia</span>
               </div>
               <div
                 className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaPhone />
-                <span>+6285156386466</span>
+                <a href="https://wa.me/6285156386466" className="hover:text-blue-600">+62 851-5638-6466</a>
               </div>
             </div>
 

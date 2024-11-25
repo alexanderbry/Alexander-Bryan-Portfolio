@@ -74,7 +74,7 @@ const skillCategories = [
         icon: <SiExpress className="text-gray-700" />,
       },
       {
-        title: "Apollo Server",
+        title: "Apollo",
         icon: <SiGraphql className="text-pink-500" />,
       },
     ],
@@ -228,12 +228,12 @@ const SkillsPage = () => {
 
   return (
     <motion.div
-      className="container mx-auto px-4 py-8 h-full max-w-7xl"
+      className="container mx-auto px-4 py-4 h-full max-w-7xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+      <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           initial={{ y: -20, opacity: 0 }}
@@ -244,7 +244,7 @@ const SkillsPage = () => {
         </motion.h2>
       </div>
       <motion.div
-        className="flex flex-col items-center justify-center gap-4 mb-4"
+        className="flex flex-col items-center justify-center gap-4 mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
