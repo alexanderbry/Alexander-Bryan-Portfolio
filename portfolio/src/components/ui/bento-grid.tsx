@@ -19,7 +19,7 @@ export const BentoGrid = ({
         stiffness: 100,
       }}
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
+        "grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-[18rem]", // Ensure rows have a set height
         className
       )}
     >
@@ -93,8 +93,8 @@ export const BentoGridItem = ({
       )}
 
       {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-300 space-y-2">
-        <div className="grid grid-cols-[auto_1fr] items-center gap-4">
+      <div className="group-hover/bento:translate-x-2 transition duration-300 space-y-2 ">
+        <div className="grid grid-cols-[auto_1fr] items-center gap-4 ">
           {icon && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8, x: -20 }}
@@ -139,7 +139,7 @@ export const BentoGridItem = ({
               <div className="font-sans font-bold text-neutral-800 dark:text-neutral-100 text-base leading-tight">
                 {title}
               </div>
-              <div className="font-sans text-neutral-600 dark:text-neutral-400 text-sm leading-tight">
+              <div className="font-sans text-neutral-700 dark:text-neutral-200 text-sm leading-tight">
                 {description}
               </div>
             </motion.div>

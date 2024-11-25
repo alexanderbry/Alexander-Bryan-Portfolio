@@ -2,13 +2,13 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import {
   IconCode,
-  IconDeviceMobile,
   IconBrandJavascript,
   IconApi,
   IconDatabase,
   IconGitBranch,
   IconBuildingSkyscraper ,
-  IconPuzzle
+  IconPuzzle,
+  IconDevices
 } from "@tabler/icons-react";
 
 export function CoreCompetenciesSection() {
@@ -21,7 +21,7 @@ export function CoreCompetenciesSection() {
     {
       title: "Cross-Platform Development",
       description: "Building seamless applications across multiple platforms",
-      icon: <IconDeviceMobile className="w-8 h-8 md:w-10 md:h-10" />,
+      icon: <IconDevices className="w-8 h-8 md:w-10 md:h-10" />,
     },
     {
       title: "JavaScript Ecosystem",

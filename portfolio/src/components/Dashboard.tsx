@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { IconAddressBook, IconCode, IconDevices, IconFiles, IconMail, IconUser, IconUserBolt } from "@tabler/icons-react";
+import { IconCode, IconFiles, IconMail, IconUser } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -26,6 +26,7 @@ import { SparklesCore } from "./ui/sparkles";
 import { Ellipsis } from "lucide-react";
 import ProfileBackground from "./Profile";
 import { GlobeSpin } from "./GlobeSpin";
+import MeImage from "../assets/Memoji.png";
 
 export function HomeDashboard() {
   return (
@@ -36,7 +37,7 @@ export function HomeDashboard() {
           title={item.title}
           description={item.description}
           header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
+          className={cn("[&>p:text-lg] flex-shrink-0", item.className)}
           icon={item.icon}
           background={item.background}
           linkTo={item.linkTo}
@@ -53,6 +54,13 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
+        {/* <Image
+    src={MeImage}
+    alt="Profile Photo"
+    width={400}
+    height={400}
+    className="w-[220px] h-[220px] justify-self-center transition-all duration-300 hover:scale-105"
+  /> */}
     </motion.div>
   );
 };
@@ -129,7 +137,7 @@ const features = [
 const SkeletonTwo = () => {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <div className="absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
+      <div className="w-full h-full absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -383,11 +391,11 @@ const SkeletonFive = () => {
 };
 const items = [
   {
-    title: "My Profile",
-    description: "Professional overview and personal details",
+    // title: "Hello!",
+    // description: "Click here to get to know me",
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    icon: <IconUser className="h-8 w-8 text-neutral-500" />,
+    // icon: <IconUser className="h-8 w-8 text-neutral-500" />,
     background: <ProfileBackground />,
     linkTo: "/profile",
   },
@@ -421,7 +429,7 @@ const items = [
   },
   {
     title: "Contact Me",
-    description: "Ways to get in touch",
+    description: "Willing to work globally.",
     header: <SkeletonFive />,
     className: "md:col-span-1",
     icon: <IconMail className="h-8 w-8 text-neutral-500" />,

@@ -11,54 +11,56 @@ import {
   FaMapMarkerAlt,
   FaPhone,
 } from "react-icons/fa";
-import MeImage from "../../assets/meSquare.jpg"
+import MeImage from "../../assets/meSquare.jpg";
+import TextTransitionProfile from "@/components/TextTransitionProfile";
+import { motion } from "framer-motion";
 
 const Profile = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
     // Check localStorage for theme preference
-    const storedTheme = localStorage.getItem("theme") as 'dark' | 'light';
-    
+    const storedTheme = localStorage.getItem("theme") as "dark" | "light";
+
     // Validate and set theme
-    if (storedTheme === 'light' || storedTheme === 'dark') {
+    if (storedTheme === "light" || storedTheme === "dark") {
       setTheme(storedTheme);
-      
+
       // Apply theme to html element for Tailwind dark mode
-      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
+      document.documentElement.classList.toggle("dark", storedTheme === "dark");
     } else {
       // Default to dark theme if no valid theme is stored
-      setTheme('dark');
-      localStorage.setItem("theme", 'dark');
-      document.documentElement.classList.add('dark');
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
   const themeColors = {
     dark: {
-      background: "bg-[#121212]", 
-      border: "border-slate-700", 
-      skillBg: "bg-[#1E293B]", 
+      background: "bg-[#121212]",
+      border: "border-slate-700",
+      skillBg: "bg-[#1E293B]",
       skillHover: "hover:bg-[#334155]",
       scrollbar: "scrollbar-dark",
       socialIcons: {
         email: "text-gray-400 hover:text-white",
         github: "text-gray-400 hover:text-white",
-        linkedin: "text-blue-500 hover:text-blue-400"
-      }
+        linkedin: "text-blue-500 hover:text-blue-400",
+      },
     },
     light: {
-      background: "bg-gray-50", 
-      border: "border-gray-300", 
-      skillBg: "bg-gray-200", 
+      background: "bg-gray-50",
+      border: "border-gray-300",
+      skillBg: "bg-gray-200",
       skillHover: "hover:bg-gray-300",
       scrollbar: "scrollbar-light",
       profileBorder: "border-gray-300",
       socialIcons: {
         email: "text-gray-700 dark:text-gray-300",
         github: "text-gray-700 dark:text-gray-300",
-        linkedin: "text-blue-600 dark:text-blue-400"
-      }
+        linkedin: "text-blue-600 dark:text-blue-400",
+      },
     },
   };
 
@@ -72,8 +74,10 @@ const Profile = () => {
           <div className="flex flex-col items-center space-y-4">
             {/* Profile Image */}
             <div className="relative">
-              <div className={`w-40 h-40 rounded-full overflow-hidden border-4 border-slate-500,
-`}>
+              <div
+                className={`w-40 h-40 rounded-full overflow-hidden border-4 border-slate-500,
+`}
+              >
                 <Image
                   src={MeImage}
                   alt="Profile"
@@ -86,7 +90,9 @@ const Profile = () => {
 
             {/* Name and Title */}
             <div className="text-center">
-              <h1 className={`text-2xl font-bold text-neutral-900 dark:text-neutral-100`}>
+              <h1
+                className={`text-2xl font-bold text-neutral-900 dark:text-neutral-100`}
+              >
                 Alexander Briyan
               </h1>
               <p className={`text-sm text-neutral-800 dark:text-neutral-200`}>
@@ -106,7 +112,12 @@ const Profile = () => {
                 className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaPhone />
-                <a href="https://wa.me/6285156386466" className="hover:text-blue-600">+62 851-5638-6466</a>
+                <a
+                  href="https://wa.me/6285156386466"
+                  className="hover:text-blue-600"
+                >
+                  +62 851-5638-6466
+                </a>
               </div>
             </div>
 
@@ -145,6 +156,41 @@ const Profile = () => {
           `}
         >
           <div className="space-y-16">
+            {/* Get to know me */}
+            <section>
+              <div className="max-w-2xl mx-auto p-6 gap-8">
+                <TextTransitionProfile />
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-5xl leading-relaxed mb-10 font-bold">
+                  My name is{" "}
+                  <Highlight className="text-white dark:text-black">
+                    Bryan
+                  </Highlight>
+                  .
+                </p>
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                  I'm passionate about building user-centric web and mobile
+                  applications. I've sharpened my skills in modern development
+                  frameworks and technologies through the Hacktiv8 bootcamp.
+                </p>
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                  My journey to becoming a developer was fueled by a genuine
+                  love for learning and pushing the boundaries of what's
+                  possible in software development.
+                </p>
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                  I'm always eager to learn new things and work on challenging
+                  projects that allow me to grow as a developer. I'm excited to
+                  bring my skills and enthusiasm to your team!
+                </p>
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-xl leading-relaxed my-12">
+                  <span className="italic">
+                    &quot;The only way to do great work is to love what you
+                    do.&quot;
+                  </span>{" "}
+                  - <span className="font-semibold">Steve Jobs</span>
+                </p>
+              </div>
+            </section>
             {/* Professional Summary */}
             <section>
               <h2
@@ -225,3 +271,41 @@ const Profile = () => {
 };
 
 export default Profile;
+
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  const cn = (...classes: string[]) => {
+    return classes.filter(Boolean).join(" ");
+  };
+  return (
+    <motion.span
+      initial={{
+        backgroundSize: "0% 100%",
+      }}
+      animate={{
+        backgroundSize: "100% 100%",
+      }}
+      transition={{
+        duration: 2,
+        ease: "linear",
+        delay: 0.5,
+      }}
+      style={{
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "left center",
+        display: "inline",
+      }}
+      className={cn(
+        `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
+        className!
+      )}
+    >
+      {children}
+    </motion.span>
+  );
+};

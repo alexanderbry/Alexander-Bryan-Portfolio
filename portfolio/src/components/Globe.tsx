@@ -395,11 +395,7 @@ export function GlobeDemo() {
 
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <div className="w-full h-[200px] relative">
-        <div className="w-full h-full">
           <World data={sampleArcs} globeConfig={globeConfig} />
-        </div>
-      </div>
     </div>
   );
 }
