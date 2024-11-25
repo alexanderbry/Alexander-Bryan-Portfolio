@@ -2,6 +2,7 @@
 import { CertificationsSection } from "@/components/CertificationsSection";
 import { CoreCompetenciesSection } from "@/components/CoreCompetenciesSection";
 import { WorkExperienceSection } from "@/components/WorkExperienceSection";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   FaGithub,
@@ -10,6 +11,7 @@ import {
   FaMapMarkerAlt,
   FaPhone,
 } from "react-icons/fa";
+import MeImage from "../../assets/meSquare.jpg"
 
 const Profile = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -39,7 +41,6 @@ const Profile = () => {
       skillBg: "bg-[#1E293B]", 
       skillHover: "hover:bg-[#334155]",
       scrollbar: "scrollbar-dark",
-      profileBorder: "border-slate-600",
       socialIcons: {
         email: "text-gray-400 hover:text-white",
         github: "text-gray-400 hover:text-white",
@@ -71,10 +72,13 @@ const Profile = () => {
           <div className="flex flex-col items-center space-y-4">
             {/* Profile Image */}
             <div className="relative">
-              <div className={`w-40 h-40 rounded-full overflow-hidden border-4 ${currentTheme.profileBorder}`}>
-                <img
-                  src="https://via.placeholder.com/300"
+              <div className={`w-40 h-40 rounded-full overflow-hidden border-4 border-slate-500,
+`}>
+                <Image
+                  src={MeImage}
                   alt="Profile"
+                  width={250}
+                  height={250}
                   className="w-full h-full object-cover"
                 />
               </div>

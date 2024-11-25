@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import {
   SiJavascript,
   SiReact,
-  SiPostgresql,
   SiCss3,
   SiHackerrank,
 } from "react-icons/si";
+import {
+  FaDatabase,
+
+} from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { FaCertificate } from "react-icons/fa";
 import { LinkPreview } from "./ui/link-preview";
@@ -37,7 +40,7 @@ export function CertificationsSection() {
     {
       title: "SQL",
       provider: "HackerRank",
-      icon: <SiPostgresql className="w-6 h-6 text-blue-600" />,
+      icon: <FaDatabase className="w-6 h-6 text-blue-600" />,
       link: "https://www.hackerrank.com/certificates/iframe/de5ce7d33e3f",
       previewImage: certificatePreview,
     },

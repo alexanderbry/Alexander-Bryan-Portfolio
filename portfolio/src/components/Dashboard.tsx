@@ -426,6 +426,6 @@ const items = [
     className: "md:col-span-1",
     icon: <IconMail className="h-8 w-8 text-neutral-500" />,
     background: "",
-    linkTo: "/profile",
+    linkTo: "/contactme",
   },
 ];
