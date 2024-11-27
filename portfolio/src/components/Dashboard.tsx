@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { IconCode, IconFiles, IconMail, IconUser } from "@tabler/icons-react";
+import { IconCode, IconFiles, IconMail } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -26,7 +26,6 @@ import { SparklesCore } from "./ui/sparkles";
 import { Ellipsis } from "lucide-react";
 import ProfileBackground from "./Profile";
 import { GlobeSpin } from "./GlobeSpin";
-import MeImage from "../assets/Memoji.png";
 
 export function HomeDashboard() {
   return (
@@ -425,7 +424,7 @@ const items = [
     header: <SkeletonFour />,
     icon: <IconFiles className="h-8 w-8 text-neutral-500" />,
     background: "",
-    linkTo: "/profile",
+    linkTo: "/projects",
   },
   {
     title: "Contact Me",

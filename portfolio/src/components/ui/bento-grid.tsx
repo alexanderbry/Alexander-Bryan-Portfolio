@@ -19,7 +19,7 @@ export const BentoGrid = ({
         stiffness: 100,
       }}
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-[18rem]", // Ensure rows have a set height
+        "grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-[18rem]",
         className
       )}
     >

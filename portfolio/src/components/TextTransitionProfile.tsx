@@ -7,8 +7,8 @@ const greetings = [
   "¡Hola!",
   "Halo!",
   "Bonjour!",
-  "Kon'nichiwa!",
-  "Nǐ hǎo!",
+  "こんにちは!",
+  "你好!",
   "Ciao!",
   "Olá!",
   "Namaste!",
@@ -37,7 +37,7 @@ const TextTransitionProfile: React.FC = () => {
       setTimeout(() => {
         setCurrentRole((prev) => {
           const nextIndex = (greetings.indexOf(prev) + 1) % greetings.length;
-          setCurrentColor(colors[nextIndex]); // Update color based on greeting
+          setCurrentColor(colors[nextIndex]);
           return greetings[nextIndex];
         });
       }, 500);
@@ -49,11 +49,11 @@ const TextTransitionProfile: React.FC = () => {
   return (
     <motion.div
       key={currentRole}
-      initial={{ y: 35, opacity: 0 }}
+      initial={{ y: 15, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -20, opacity: 0 }}
+      exit={{ y: -15, opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold text-start"
+      className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-start pl-4 sm:pl-32 md:pl-14 mb-2"
       style={{ color: currentColor }}
     >
       {currentRole}

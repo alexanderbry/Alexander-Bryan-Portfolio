@@ -70,12 +70,12 @@ const Profile = () => {
     <div className={`w-full h-full`}>
       <div className="grid md:grid-cols-[1fr_2fr] gap-6 h-full">
         {/* Sidebar */}
-        <div className="flex items-center justify-center h-full">
-          <div className="flex flex-col items-center space-y-4">
+        <div className="flex items-center justify-center h-full mt-8 md:mt-0">
+          <div className="flex flex-col items-center space-y-4 md:space-y-6">
             {/* Profile Image */}
             <div className="relative">
               <div
-                className={`w-40 h-40 rounded-full overflow-hidden border-4 border-slate-500,
+                className={`w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-slate-500,
 `}
               >
                 <Image
@@ -91,22 +91,22 @@ const Profile = () => {
             {/* Name and Title */}
             <div className="text-center">
               <h1
-                className={`text-2xl font-bold text-neutral-900 dark:text-neutral-100`}
+                className={`text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100`}
               >
                 Alexander Briyan
               </h1>
-              <p className={`text-sm text-neutral-800 dark:text-neutral-200`}>
+              <p className={`text-md md:text-lg text-neutral-800 dark:text-neutral-200`}>
                 Fullstack Software Developer
               </p>
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-2 text-center">
+            <div className="space-y-1 md:space-y-2 text-center">
               <div
                 className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
               >
                 <FaMapMarkerAlt />
-                <span>West Java, Indonesia</span>
+                <span className="text-md md:text-lg">West Java, Indonesia</span>
               </div>
               <div
                 className={`flex items-center justify-center space-x-2 text-neutral-800 dark:text-neutral-200`}
@@ -114,7 +114,7 @@ const Profile = () => {
                 <FaPhone />
                 <a
                   href="https://wa.me/6285156386466"
-                  className="hover:text-blue-600"
+                  className="hover:text-blue-600 text-md md:text-lg"
                 >
                   +62 851-5638-6466
                 </a>
@@ -122,24 +122,24 @@ const Profile = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a
                 href="mailto:alexunderbrain@gmail.com"
                 className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.email}`}
               >
-                <FaEnvelope size={24} />
+                <FaEnvelope size={26} />
               </a>
               <a
                 href="https://github.com/yourusername"
                 className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.github}`}
               >
-                <FaGithub size={24} />
+                <FaGithub size={26} />
               </a>
               <a
                 href="https://linkedin.com/in/yourusername"
                 className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.linkedin}`}
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin size={26} />
               </a>
             </div>
           </div>
@@ -158,31 +158,29 @@ const Profile = () => {
           <div className="space-y-16">
             {/* Get to know me */}
             <section>
-              <div className="max-w-2xl mx-auto p-6 gap-8">
+              <div className="max-w-2xl mx-auto p-6 gap-8 -m-6">
                 <TextTransitionProfile />
-                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-5xl leading-relaxed mb-10 font-bold">
+                <p className="text-center text-neutral-800 dark:text-neutral-200 text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-relaxed mb-10 pl-12 md:pl-14 font-bold">
                   My name is{" "}
-                  <Highlight className="text-white dark:text-black">
-                    Bryan
-                  </Highlight>
-                  .
+                  
+                    Bryan.
                 </p>
-                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
                   I'm passionate about building user-centric web and mobile
                   applications. I've sharpened my skills in modern development
                   frameworks and technologies through the Hacktiv8 bootcamp.
                 </p>
-                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
                   My journey to becoming a developer was fueled by a genuine
                   love for learning and pushing the boundaries of what's
                   possible in software development.
                 </p>
-                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-lg leading-relaxed mb-8">
+                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
                   I'm always eager to learn new things and work on challenging
                   projects that allow me to grow as a developer. I'm excited to
                   bring my skills and enthusiasm to your team!
                 </p>
-                <p className="text-justify text-neutral-800 dark:text-neutral-200 text-xl leading-relaxed my-12">
+                <p className="text-center text-neutral-800 dark:text-neutral-200 text-md md:text-lg lg:text-xl leading-relaxed my-12">
                   <span className="italic">
                     &quot;The only way to do great work is to love what you
                     do.&quot;
@@ -190,23 +188,6 @@ const Profile = () => {
                   - <span className="font-semibold">Steve Jobs</span>
                 </p>
               </div>
-            </section>
-            {/* Professional Summary */}
-            <section>
-              <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
-              >
-                Professional Profile
-              </h2>
-              <p
-                className={`leading-relaxed text-justify text-neutral-800 dark:text-neutral-200`}
-              >
-                A dedicated Full Stack JavaScript developer with a proven track
-                record of building innovative web and mobile applications.
-                Skilled in creating scalable solutions using modern
-                technologies, with a strong foundation in front-end and back-end
-                development.
-              </p>
             </section>
 
             {/* Core Competencies */}
@@ -301,7 +282,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
+        `relative inline-block py-1 px-2 md:px-5 rounded-lg bg-gradient-to-r from-gray-700 to-gray-700 dark:from-indigo-500 dark:to-purple-500`,
         className!
       )}
     >
