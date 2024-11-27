@@ -27,6 +27,7 @@ import {
   SiGooglecloud,
   SiAxios,
   SiVercel,
+  SiApollographql,
 } from "react-icons/si";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { RiOpenaiFill } from "react-icons/ri";
@@ -75,7 +76,7 @@ const skillCategories = [
       },
       {
         title: "Apollo",
-        icon: <SiGraphql className="text-pink-500" />,
+        icon: <SiApollographql  className="text-gray-700" />,
       },
     ],
   },

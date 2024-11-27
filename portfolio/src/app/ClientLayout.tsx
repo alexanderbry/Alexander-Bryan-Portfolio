@@ -71,7 +71,7 @@ export default function ClientLayout({
     },
     {
       label: "Projects",
-      href: "#",
+      href: "/projects",
       icon: (
         <IconFiles className="text-neutral-600 dark:text-neutral-300 h-6 w-6 flex-shrink-0" />
       ),
