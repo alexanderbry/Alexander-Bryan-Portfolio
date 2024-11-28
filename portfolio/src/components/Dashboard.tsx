@@ -53,7 +53,7 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-        {/* <Image
+      {/* <Image
     src={MeImage}
     alt="Profile Photo"
     width={400}
@@ -136,7 +136,7 @@ const features = [
 const SkeletonTwo = () => {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <div className="w-full h-full absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
+      <div className="w-full h-full absolute inset-0 flex flex-wrap justify-center items-center gap-4 px-4 pb-4">
         {features.map((feature, index) => (
           <motion.div
             key={index}

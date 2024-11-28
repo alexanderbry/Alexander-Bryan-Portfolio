@@ -124,7 +124,7 @@ export const MobileSidebar = ({
         >
           <div className="flex items-center justify-between h-16 px-4">
             <div className="flex items-center space-x-2">
-              <svg 
+              {/* <svg 
                 width="32" 
                 height="32" 
                 viewBox="0 0 24 24" 
@@ -136,8 +136,8 @@ export const MobileSidebar = ({
                 />
               </svg>
               <span className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
-                Your App
-              </span>
+                Alexander Briyan
+              </span> */}
             </div>
             
             <button 
@@ -193,7 +193,7 @@ export const MobileSidebar = ({
                   className
                 )}
               >
-                <div className="flex-grow overflow-y-auto p-4 space-y-2">
+                <div className="flex-grow overflow-y-auto px-4 space-y-2">
                   {React.Children.map(children, (child, index) => (
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}

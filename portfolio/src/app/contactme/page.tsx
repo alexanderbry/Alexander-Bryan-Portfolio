@@ -10,8 +10,8 @@ import {
   FaCommentDots,
   FaCheck,
 } from "react-icons/fa";
-import Image from "next/image";
 import Link from "next/link";
+import { Globe } from "../../components/Globe";
 
 const ContactMePage = () => {
   const [formData, setFormData] = useState({
@@ -81,52 +81,53 @@ const ContactMePage = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="grid md:grid-cols-2 h-full w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 h-full w-full">
         {/* Contact Information Section */}
-        <motion.div
-          className="bg-[url('https://i.pinimg.com/736x/5b/e6/c5/5be6c573577a0c8a0d84e6bc56195128.jpg')] text-white p-8 flex flex-col justify-end"
-          variants={itemVariants}
-        >
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4">
+        <motion.div className="text-black dark:text-white p-4 md:p-8 flex flex-col">
+          <div className="w-full h-full">
+            <Globe />
+          </div>
+          <div className="flex flex-col justify-center w-full mt-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
               <motion.div
-                className="flex items-center space-x-4 sm:col-span-1"
+                className="flex items-center space-x-4"
                 variants={itemVariants}
               >
                 <FaMapMarkerAlt className="text-xl min-w-[32px]" />
                 <div>
-                  <p className="text-[12px] font-semibold">Location</p>
-                  <p className="text-[10px]">
-                    West Java, Indonesia
-                  </p>
+                  <p className="text-sm font-semibold">Location</p>
+                  <p className="text-xs">West Java, Indonesia</p>
                 </div>
               </motion.div>
 
-              <motion.div
-                variants={itemVariants}
-              >
-                <Link href="https://wa.me/6285156386466" className="flex items-center space-x-4 sm:col-span-1 hover:text-blue-400">
-                <FaPhone className="text-xl min-w-[32px]" />
-                <div>
-                  <p className="text-[12px] font-semibold">Phone</p>
-                  <p className="text-[10px]">+62 851-5638-6466</p>
-                </div>
+              <motion.div variants={itemVariants}>
+                <Link
+                  href="https://wa.me/6285156386466"
+                  className="flex items-center space-x-4 hover:text-blue-400"
+                >
+                  <FaPhone className="text-xl min-w-[32px]" />
+                  <div>
+                    <p className="text-sm font-semibold">Phone</p>
+                    <p className="text-xs">+62 851-5638-6466</p>
+                  </div>
                 </Link>
               </motion.div>
 
               <motion.div
-                className="flex items-center space-x-4 sm:col-span-1"
+                className="flex items-center space-x-4"
                 variants={itemVariants}
               >
-                <Link href="mailto:alexunderbrain@gmail.com" className="flex items-center space-x-4 sm:col-span-1 hover:text-blue-400">
-                <FaEnvelope className="text-xl min-w-[32px]" />
-                <div>
-                  <p className="text-[12px] font-semibold">Email</p>
-                  <p className="text-[10px] break-words">
-                    alexunderbrain@gmail.com
-                  </p>
-                </div>
+                <Link
+                  href="mailto:alexunderbrain@gmail.com"
+                  className="flex items-center space-x-4 hover:text-blue-400"
+                >
+                  <FaEnvelope className="text-xl min-w-[32px]" />
+                  <div>
+                    <p className="text-sm font-semibold">Email</p>
+                    <p className="text-xs break-words">
+                      alexunderbrain@gmail.com
+                    </p>
+                  </div>
                 </Link>
               </motion.div>
             </div>
@@ -136,10 +137,10 @@ const ContactMePage = () => {
         {/* Contact Form Section */}
         <motion.form
           onSubmit={handleSubmit}
-          className="p-8 space-y-6 my-auto"
+          className="p-4 md:p-8 space-y-6 my-auto"
           variants={itemVariants}
         >
-          <h2 className="text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
             Send a Message
           </h2>
 

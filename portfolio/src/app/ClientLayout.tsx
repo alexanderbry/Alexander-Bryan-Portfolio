@@ -1,7 +1,12 @@
 // app/ClientLayout.tsx
 "use client";
 import React, { useState, useEffect } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
+import {
+  Sidebar,
+  SidebarBody,
+  SidebarLink,
+  useSidebar,
+} from "@/components/ui/sidebar";
 import {
   IconBrandTabler,
   IconSun,
@@ -16,6 +21,8 @@ import {
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import IconLogo from "../assets/IconLogo.png";
+import Image from "next/image";
 
 export default function ClientLayout({
   children,
@@ -95,8 +102,8 @@ export default function ClientLayout({
       <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10 relative">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            {open ? <Logo /> : <LogoIcon />}
-            <div className="mt-8 flex flex-col space-y-2">
+            <Logo />
+            <div className="mt-4 md:mt-8 flex flex-col space-y-2 text-center">
               {links.map((link, idx) => (
                 <motion.div
                   key={idx}
@@ -130,30 +137,49 @@ export default function ClientLayout({
   );
 }
 
-const Logo = () => (
-  <Link
-    href="/"
-    className="group flex space-x-3 items-center text-sm py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors"
-  >
-    <div className="h-6 w-7 bg-gradient-to-br from-black to-neutral-700 dark:from-white dark:to-neutral-200 rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm" />
-    <motion.span
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-black dark:group-hover:text-white transition-colors"
+const Logo = () => {
+  const { open, animate } = useSidebar();
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      animate={{
+        opacity: 100,
+        x: 0,
+      }}
+      transition={{ delay: 0 * 0.15 }}
     >
-      Alexander Briyan
-    </motion.span>
-  </Link>
-);
+      <Link
+        href="/"
+        className={cn(
+          "md:mt-4 flex items-center justify-start gap-2 group/sidebar py-2"
+        )}
+      >
 
-const LogoIcon = () => (
-  <Link
-    href="/"
-    className="group flex justify-center items-center text-sm py-2 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors"
-  >
-    <div className="h-6 w-7 bg-gradient-to-br from-black to-neutral-700 dark:from-white dark:to-neutral-200 rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm" />
-  </Link>
-);
+        <Image
+          src={IconLogo}
+          alt="Logo"
+          width={50}
+          height={50}
+          className="text-neutral-600 dark:text-neutral-300 h-7 w-7 flex-shrink-0 -mt-1"
+        />
+
+        <motion.span
+          animate={{
+            display: animate
+              ? open
+                ? "inline-block"
+                : "none"
+              : "inline-block",
+            opacity: animate ? (open ? 1 : 0) : 1,
+          }}
+          className="text-neutral-700 dark:text-neutral-200 text-md group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 font-bold"
+        >
+          Alexander Briyan
+        </motion.span>
+      </Link>
+    </motion.div>
+  );
+};
 
 const ThemeToggleSection = ({
   theme,

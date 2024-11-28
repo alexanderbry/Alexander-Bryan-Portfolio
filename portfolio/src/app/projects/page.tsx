@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import { FaGithub, FaExternalLinkAlt, FaGoogle } from "react-icons/fa";
 
+import Kedebook from "../../assets/Kedebook.png";
 import Sipelit from "../../assets/Sipelit.png";
 import HmmDetail from "../../assets/HmmDetail.jpg";
 import HmmProducts from "../../assets/HmmProducts.jpg";
@@ -38,7 +39,7 @@ interface Project {
   technologies: string[];
   githubLink?: string;
   liveLink?: string;
-  image: StaticImageData | string;
+  image: StaticImageData;
   date: string;
   fullDescription?: string;
 }
@@ -61,7 +62,7 @@ const projectsData: Project[] = [
     ],
     githubLink: "https://github.com/yourusername/sipelit",
     liveLink: "https://sipelit-app.com",
-    image: "",
+    image: Sipelit,
     date: "November 2024",
     fullDescription:
       "A comprehensive mobile finance application that enables users to split bills, scan receipts, and share expenses seamlessly using cutting-edge mobile technologies.",
@@ -80,7 +81,7 @@ const projectsData: Project[] = [
     ],
     githubLink: "https://github.com/yourusername/kedebook",
     liveLink: "https://kedebook-app.com",
-    image: "",
+    image: Kedebook,
     date: "October 2024",
     fullDescription:
       "A feature-rich mobile social media application replicating core Facebook functionalities with modern mobile development practices.",
