@@ -2,6 +2,13 @@ import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { FaBriefcase, FaUserGraduate } from "react-icons/fa";
+import TVOne from "../assets/TVOne.jpg";
+import Hacktiv1 from "../assets/Hacktiv8-1.jpg";
+import Hacktiv2 from "../assets/Hacktiv8-2.jpg";
+import KAI1 from "../assets/KAI-1.jpg";
+import KAI2 from "../assets/KAI-2.jpg";
+import STIKOM1 from "../assets/STIKOM-1.jpg";
+import STIKOM2 from "../assets/STIKOM-2.jpg";
 
 export function WorkExperienceSection() {
   const data = [
@@ -18,19 +25,11 @@ export function WorkExperienceSection() {
             seamless production flow and clear communication between on-screen
             talent and the technical crew.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-video transform -rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
+          <div className="grid">
+            <div className="aspect-video transform transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/pro/hero-sections.png"
+                src={TVOne}
                 alt="Broadcast Coordination"
-                fill
-                className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
-              />
-            </div>
-            <div className="aspect-video transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
-              <Image
-                src="https://assets.aceternity.com/features-section.png"
-                alt="Production Management"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
               />
@@ -56,7 +55,7 @@ export function WorkExperienceSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-video transform -rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/cards.png"
+                src={STIKOM1}
                 alt="Academic Journey"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
@@ -64,7 +63,7 @@ export function WorkExperienceSection() {
             </div>
             <div className="aspect-video transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/pro/bento-grids.png"
+                src={STIKOM2}
                 alt="University Life"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
@@ -91,7 +90,7 @@ export function WorkExperienceSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-video transform -rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/pro/hero-sections.png"
+                src={KAI1}
                 alt="Project Management"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
@@ -99,7 +98,7 @@ export function WorkExperienceSection() {
             </div>
             <div className="aspect-video transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/features-section.png"
+                src={KAI2}
                 alt="Construction Oversight"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
@@ -128,7 +127,7 @@ export function WorkExperienceSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-video transform -rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/templates/startup-1.webp"
+                src={Hacktiv1}
                 alt="Hacktiv8 Bootcamp"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
@@ -136,7 +135,7 @@ export function WorkExperienceSection() {
             </div>
             <div className="aspect-video transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
               <Image
-                src="https://assets.aceternity.com/templates/startup-2.webp"
+                src={Hacktiv2}
                 alt="Coding Bootcamp"
                 fill
                 className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"

@@ -26,6 +26,9 @@ import { SparklesCore } from "./ui/sparkles";
 import { Ellipsis } from "lucide-react";
 import ProfileBackground from "./Profile";
 import { GlobeSpin } from "./GlobeSpin";
+import Kedebook from "../assets/Kedebook.png";
+import Sipelit from "../assets/Sipelit.png";
+import HmmHome from "../assets/HmmHome.jpg";
 
 export function HomeDashboard() {
   return (
@@ -53,13 +56,6 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      {/* <Image
-    src={MeImage}
-    alt="Profile Photo"
-    width={400}
-    height={400}
-    className="w-[220px] h-[220px] justify-self-center transition-all duration-300 hover:scale-105"
-  /> */}
     </motion.div>
   );
 };
@@ -245,11 +241,11 @@ const SkeletonFour = () => {
       >
         {/* Background Image */}
         <Image
-          src="https://i.pinimg.com/736x/31/26/e8/3126e89cf1d447263897b0745648ca28.jpg"
-          alt="background"
+          src={Kedebook}
+          alt="Kedebook"
           width={1920}
           height={1080}
-          className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
+          className="pt-6 absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
 
         {/* Hover Overlay */}
@@ -257,7 +253,7 @@ const SkeletonFour = () => {
           className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
-          to-black/60
+          to-black/20
           opacity-0 
           group-hover:opacity-100 
           transition-opacity 
@@ -267,11 +263,11 @@ const SkeletonFour = () => {
         >
           <div className="text-white">
             <h3
-              className="text-2xl font-bold mb-1 
+              className="text-xl font-bold mb-1 
               text-white 
               drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
             >
-              Vanilla Javascript
+              Kedebook
             </h3>
             <p
               className="text-sm font-medium text-white/80 
@@ -279,20 +275,18 @@ const SkeletonFour = () => {
               leading-relaxed
               drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
             >
-              Exploring the pure essence of web development
+              A mobile social media app (Facebook Clone).
             </p>
           </div>
         </div>
       </motion.div>
 
       <motion.div className="h-full w-1/3 rounded-2xl relative overflow-hidden group">
-        {/* Background Image */}
         <Image
-          src="https://i.pinimg.com/736x/66/bb/b1/66bbb1fef4a2bdf34a21682eac937134.jpg"
-          alt="background"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
+          src={HmmHome}
+          alt="Hmm"
+          fill
+          className="absolute inset-0 object-cover z-10 group-hover:scale-110 transition-transform duration-300"
         />
 
         {/* Hover Overlay */}
@@ -300,7 +294,7 @@ const SkeletonFour = () => {
           className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
-          to-black/60
+          to-black/20
           opacity-0 
           group-hover:opacity-100 
           transition-opacity 
@@ -310,11 +304,11 @@ const SkeletonFour = () => {
         >
           <div className="text-white">
             <h3
-              className="text-2xl font-bold mb-1 
+              className="text-xl font-bold mb-1 
               text-white 
               drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
             >
-              Tailwind CSS
+              Hmm
             </h3>
             <p
               className="text-sm font-medium text-white/80 
@@ -322,7 +316,7 @@ const SkeletonFour = () => {
               leading-relaxed
               drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
             >
-              Crafting beautiful interfaces with utility-first design
+              A web-based e-commerce app (H&M Clone) with infinite scroll.
             </p>
           </div>
         </div>
@@ -334,11 +328,11 @@ const SkeletonFour = () => {
       >
         {/* Background Image */}
         <Image
-          src="https://i.pinimg.com/736x/09/36/c9/0936c9bbcb4d7bd89315cd0fed9c921d.jpg"
+          src={Sipelit}
           width={1920}
           height={1080}
-          alt="background"
-          className="absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
+          alt="Sipelit"
+          className="pt-6 absolute inset-0 object-cover z-0 group-hover:scale-110 transition-transform duration-300"
         />
 
         {/* Hover Overlay */}
@@ -346,7 +340,7 @@ const SkeletonFour = () => {
           className="absolute inset-0 
           bg-gradient-to-t 
           from-black/90 
-          to-black/60
+          to-black/20
           opacity-0 
           group-hover:opacity-100 
           transition-opacity 
@@ -356,11 +350,11 @@ const SkeletonFour = () => {
         >
           <div className="text-white">
             <h3
-              className="text-2xl font-bold mb-1 
+              className="text-xl font-bold mb-1 
               text-white 
               drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
             >
-              Angular & Redux
+              Sipelit
             </h3>
             <p
               className="text-sm font-medium text-white/80 
@@ -368,7 +362,7 @@ const SkeletonFour = () => {
               leading-relaxed
               drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
             >
-              Mastering state management and component architecture
+              Mobile finance app for split bills, scan and share receipt.
             </p>
           </div>
         </div>

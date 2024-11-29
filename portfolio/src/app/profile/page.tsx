@@ -70,7 +70,7 @@ const Profile = () => {
     <div className={`w-full h-full`}>
       <div className="grid md:grid-cols-[1fr_2fr] gap-6 h-full">
         {/* Sidebar */}
-        <div className="flex items-center justify-center h-full mt-8 md:mt-0">
+        <div className="flex items-center justify-center mt-8 md:mt-0">
           <div className="flex flex-col items-center space-y-4 md:space-y-6">
             {/* Profile Image */}
             <div className="relative">
@@ -130,13 +130,13 @@ const Profile = () => {
                 <FaEnvelope size={26} />
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/alexanderbry"
                 className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.github}`}
               >
                 <FaGithub size={26} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/alexanderbriyan"
                 className={`hover:scale-110 transition-transform ${currentTheme.socialIcons.linkedin}`}
               >
                 <FaLinkedin size={26} />
@@ -166,18 +166,18 @@ const Profile = () => {
                     Bryan.
                 </p>
                 <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
-                  I'm passionate about building user-centric web and mobile
-                  applications. I've sharpened my skills in modern development
+                  I&apos;m passionate about building user-centric web and mobile
+                  applications. I&apos;ve sharpened my skills in modern development
                   frameworks and technologies through the Hacktiv8 bootcamp.
                 </p>
                 <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
                   My journey to becoming a developer was fueled by a genuine
-                  love for learning and pushing the boundaries of what's
+                  love for learning and pushing the boundaries of what&apos;s
                   possible in software development.
                 </p>
                 <p className="text-justify text-neutral-800 dark:text-neutral-200 text-sm md:text-md lg:text-lg leading-relaxed mb-8">
-                  I'm always eager to learn new things and work on challenging
-                  projects that allow me to grow as a developer. I'm excited to
+                  I&apos;m always eager to learn new things and work on challenging
+                  projects that allow me to grow as a developer. I&apos;m excited to
                   bring my skills and enthusiasm to your team!
                 </p>
                 <p className="text-center text-neutral-800 dark:text-neutral-200 text-md md:text-lg lg:text-xl leading-relaxed my-12">

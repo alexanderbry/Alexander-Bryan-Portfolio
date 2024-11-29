@@ -154,7 +154,7 @@ const ContactMePage = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
+              placeholder="What should i call you?"
               required
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
@@ -170,7 +170,7 @@ const ContactMePage = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Your Email"
+              placeholder="Where can i reach you?"
               required
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-neutral-600 dark:bg-neutral-700 focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
@@ -182,7 +182,7 @@ const ContactMePage = () => {
               <FaCommentDots className="text-blue-500" />
             </div>
             <textarea
-              name="message"
+              name="Send me your message!"
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
