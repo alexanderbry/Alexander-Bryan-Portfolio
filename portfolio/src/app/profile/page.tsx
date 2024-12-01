@@ -193,7 +193,7 @@ const Profile = () => {
             {/* Core Competencies */}
             <section>
               <h2
-                className={`text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
+                className={`pt-16 text-xl font-semibold border-b ${currentTheme.border} pb-2 mb-4 text-neutral-900 dark:text-neutral-100`}
               >
                 Key Competencies
               </h2>
@@ -253,7 +253,7 @@ const Profile = () => {
 
 export default Profile;
 
-export const Highlight = ({
+const Highlight = ({
   children,
   className,
 }: {

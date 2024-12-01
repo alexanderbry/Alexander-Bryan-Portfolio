@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
-import favicon from "./favicon.ico";
 
 // Initialize Inter font with optional subsets and weights
 const inter = Inter({
@@ -68,11 +67,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "./favicon.ico" },
-      { url: "./favicon.ico", sizes: "16x16", type: "image/png" },
-      { url: "./favicon.ico", sizes: "32x32", type: "image/png" },
+      { url: "./favicon.png" },
+      { url: "./favicon.png", sizes: "16x16", type: "image/png" },
+      { url: "./favicon.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [{ url: "./favicon.ico" }],
+    apple: [{ url: "./favicon.png" }],
   },
 };
 
@@ -84,8 +83,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body
         className="

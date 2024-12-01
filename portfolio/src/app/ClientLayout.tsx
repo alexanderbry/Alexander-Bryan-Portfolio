@@ -60,37 +60,7 @@ const LoadingMemoji = () => {
         animate={{ opacity: [0, 0.2, 0.1, 0] }}
         transition={{ duration: 3, repeat: Infinity }}
       >
-        {[...Array(50)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-blue-200/50 dark:bg-neutral-700/30 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              scale: Math.random() * 2,
-            }}
-            animate={{
-              x: [
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
-              ],
-              y: [
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
-              ],
-              opacity: [0.2, 0.5, 0.2],
-              scale: [1, 2, 1],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+
       </motion.div>
 
       {/* Main Loading Container */}
@@ -354,7 +324,7 @@ const ThemeToggleSection = ({
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 0.3 }}
-    className="w-full"
+    className="w-full pb-4"
     onClick={toggleTheme}
   >
     <motion.div

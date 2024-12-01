@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = 'force-dynamic'
 import React, { useId } from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";

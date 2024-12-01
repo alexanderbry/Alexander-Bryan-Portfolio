@@ -48,7 +48,7 @@ export const Globe = ({ className }: { className?: string }) => {
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [darkMode]);
 
   return (
     <canvas

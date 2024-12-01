@@ -80,7 +80,11 @@ const TechIcons: { [key: string]: { icon: React.ElementType; color: string } } =
   };
 
 // Project Carousel Component
-const ProjectImageCarousel = ({ images }) => {
+interface ProjectImageCarouselProps {
+  images: StaticImageData[];
+}
+
+const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -140,7 +144,7 @@ const ProjectImageCarousel = ({ images }) => {
           className="absolute bottom-4 left-1/2 -translate-x-1/2 
         flex space-x-2 z-10"
         >
-          {images.map((_, index) => (
+          {images.map((_, index: number) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
@@ -261,9 +265,7 @@ const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick(modalRef, () => {
-    setSelectedProject(null);
-  });
+  useOutsideClick(modalRef);
 
   return (
     <motion.div
