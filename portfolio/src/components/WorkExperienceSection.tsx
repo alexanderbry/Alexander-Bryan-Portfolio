@@ -9,6 +9,8 @@ import KAI1 from "../assets/KAI-1.jpg";
 import KAI2 from "../assets/KAI-2.jpg";
 import STIKOM1 from "../assets/STIKOM-1.jpg";
 import STIKOM2 from "../assets/STIKOM-2.jpg";
+import UT1 from "../assets/UT-1.jpg";
+import UT2 from "../assets/UT-2.jpg";
 
 export function WorkExperienceSection() {
   const data = [
@@ -145,6 +147,41 @@ export function WorkExperienceSection() {
         </div>
       ),
     },
+    {
+      title: "2025",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-semibold mb-4">
+            <FaBriefcase className="inline-block mr-2 w-4 h-4" />
+            Frontend Developer | PT.United Tractors, Tbk, Jakarta
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-light mb-6">
+          Worked as part of an agile team to build dynamic, responsive web applications using React and TypeScript. 
+          Focused on creating reusable components, integrating RESTful and GraphQL APIs, and enhancing user experiences 
+          through performance optimization. Collaborated closely with design and backend teams to deliver scalable 
+          solutions that supported the company’s digital transformation goals.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="aspect-video transform -rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
+              <Image
+                src={UT1}
+                alt="United Tractors"
+                fill
+                className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
+              />
+            </div>
+            <div className="aspect-video transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative">
+              <Image
+                src={UT2}
+                alt="United Tractors"
+                fill
+                className="rounded-xl object-cover shadow-lg hover:shadow-xl transition-shadow"
+              />
+            </div>
+          </div>
+        </div>
+      ),
+    }
   ];
 
   return (

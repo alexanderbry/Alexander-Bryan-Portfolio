@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaLaptop,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaLaptop, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import { Globe } from "../../components/Globe";
 
@@ -51,25 +46,22 @@ const ContactMePage = () => {
         </motion.div>
 
         {/* Work Opportunities Section */}
-        <motion.div 
+        <motion.div
           className="p-8 flex flex-col justify-center space-y-6 text-neutral-800 dark:text-neutral-100"
           variants={containerVariants}
         >
-            <div className="flex items-center space-x-4">
-              <FaLaptop className="text-3xl text-blue-500" />
-              <h2 className="text-2xl md:text-3xl font-bold">
-                Reach me out!
-              </h2>
-            </div>
-            <p className="text-base leading-relaxed text-neutral-700 dark:text-neutral-200 text-justify">
-              I am open to diverse work arrangements, including on-site, 
-              remote, and hybrid opportunities. My flexibility and 
-              adaptability allow me to contribute effectively in 
-              various work environments.
-            </p>
+          <div className="flex items-center space-x-4">
+            <FaLaptop className="text-3xl text-blue-500" />
+            <h2 className="text-2xl md:text-3xl font-bold">Reach me out!</h2>
+          </div>
+          <p className="text-base leading-relaxed text-neutral-700 dark:text-neutral-200 text-justify">
+            I am open to diverse work arrangements, including on-site, remote,
+            and hybrid opportunities. My flexibility and adaptability allow me
+            to contribute effectively in various work environments.
+          </p>
 
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-3 gap-4"
             variants={itemVariants}
           >

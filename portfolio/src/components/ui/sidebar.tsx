@@ -219,24 +219,16 @@ export const MobileSidebar = ({
                 >
                   <div className="p-4 flex items-center justify-between">
                     <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                      © 2024 Your Company
+                      © 2024 Alexander Briyan
                     </div>
                     <div className="flex space-x-2">
                       <a 
-                        href="#" 
+                        href="https://github.com/alexanderbry" 
                         className="text-neutral-600 dark:text-neutral-400 
                           hover:text-neutral-900 dark:hover:text-neutral-100 
                           transition"
                       >
                         <IconBrandGithub size={20} />
-                      </a>
-                      <a 
-                        href="#" 
-                        className="text-neutral-600 dark:text-neutral-400 
-                          hover:text-neutral-900 dark:hover:text-neutral-100 
-                          transition"
-                      >
-                        <IconBrandTwitter size={20} />
                       </a>
                     </div>
                   </div>
